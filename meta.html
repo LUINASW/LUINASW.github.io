@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Connecting · Streamclipssy</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+  <h1>Finishing sign-in…</h1>
+  <p id="msg">Handing the sign-in back to the Streamclipssy Clip Tool on this computer.</p>
+  <p class="muted">This page keeps nothing. It forwards Meta's one-time code to the tool running on your own PC
+     (localhost), where it is exchanged together with the app secret that never leaves that PC.</p>
+</main>
+<script>
+  (function () {
+    var q = window.location.search || "";
+    if (!q) { document.getElementById("msg").textContent = "Nothing to do here."; return; }
+    window.location.replace("http://localhost:8766/callback/meta" + q);
+  })();
+</script>
+</body>
+</html>
